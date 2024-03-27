@@ -4,7 +4,7 @@ import pandas as pd
 # import matplotlib.pyplot as plt
 import plotly.express as px
 from src.fetch_data import load_data_from_lag_to_today
-from src.process_data import col_date, col_donnees, main_process, fic_export_data
+from src.process_data import col_date, col_donnees, main_process, fic_export_data, moyenne_consommation_par_heure
 import logging
 import os
 import glob
@@ -74,4 +74,8 @@ st.plotly_chart(fig)
 
 
 
-
+consommations = [10, 20, 15, 30, 25, 20, 35, 40, 45, 30, 25, 20,
+                 20, 25, 30, 35, 40, 45, 40, 35, 30, 25, 20, 15]
+moyennes = moyenne_consommation_par_heure(consommations)
+for heure, moyenne in enumerate(moyennes):
+    print(f"Moyenne de consommation à l'heure {heure+1}: {moyenne}")

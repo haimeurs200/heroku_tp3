@@ -52,3 +52,27 @@ if __name__ == "__main__":
 
     # data_file: str = "data/raw/eco2mix-regional-tr.csv"
     main_process()
+
+
+
+
+
+
+
+
+def moyenne_consommation_par_heure(consommations_par_heure):
+   
+
+        heures_dans_la_journee = 24
+        moyennes_par_heure = []
+
+        for heure in range(heures_dans_la_journee):
+            somme = 0
+            count = 0
+        for consommation in consommations_par_heure[heure::heures_dans_la_journee]:
+            somme += consommation
+            count += 1
+        moyenne = somme / count if count != 0 else 0
+        moyennes_par_heure.append(moyenne)
+
+        return moyennes_par_heure
