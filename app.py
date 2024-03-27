@@ -73,7 +73,6 @@ st.plotly_chart(fig)
 
 
 
-# Exemple de DataFrame df
 df = pd.DataFrame({
     'heure': range(24),
     'consommation': [10, 20, 15, 30, 25, 20, 35, 40, 45, 30, 25, 20,
@@ -82,6 +81,10 @@ df = pd.DataFrame({
 
 # Calculer la moyenne de la consommation par heure
 moyennes_par_heure = moyenne_consommation_par_heure(df['consommation'])
+
+# Vérifier la longueur de la liste des moyennes par heure
+if len(moyennes_par_heure) != 24:
+    raise ValueError("La liste des moyennes par heure ne contient pas 24 éléments. Assurez-vous que la fonction moyenne_consommation_par_heure calcule correctement la moyenne pour chaque heure de la journée.")
 
 # Créer un DataFrame pour les moyennes par heure
 df_moyennes = pd.DataFrame({'heure': range(24), 'moyenne_consommation': moyennes_par_heure})
