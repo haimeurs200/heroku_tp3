@@ -90,5 +90,5 @@ if len(moyennes_par_heure) != 24:
 df_moyennes = pd.DataFrame({'heure': range(24), 'moyenne_consommation': moyennes_par_heure})
 
 # Tracer le graphique
-fig = px.line(df_moyennes, x='heure', y='moyenne_consommation', title="Moyenne de la consommation par heure")
+fig = px.bar(df_moyennes, x='heure', y='moyenne_consommation', title="Moyenne de la consommation par heure")
 st.plotly_chart(fig)
